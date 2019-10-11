@@ -40,7 +40,7 @@ public class wController {
 	public wEmployee saveOrUpdateItem(@RequestBody wEmployee employeeCurrent) 
 			  { return employeesOfCMIS.save(employeeCurrent);	}	
 
-@PutMapping(path = "accounts/{id}")										// UPDATING
+@PutMapping(path = "accounts/{id}")										// UPDATING/Pending-(P)
 	public wEmployee updateItemById(@PathVariable int id, 
 	@Valid @RequestBody wEmployee employeePromoted) {
 		wEmployee employeeZ = employeesOfCMIS.findById(id).orElse(null);
@@ -52,7 +52,7 @@ public class wController {
 		wEmployee updatedItem = employeesOfCMIS.save(employeeZ);		
 		return updatedItem;	}
 
-@PatchMapping(path = "accounts/{id}")									// Patch/updating-(P)
+@PatchMapping(path = "accounts/{id}")									// PaATCH /updating-(P)
 	public wEmployee patchUpdateItemById(@PathVariable int id, 
 	@Valid @RequestBody wEmployee employeeDemoted) {
 		wEmployee employeeY = employeesOfCMIS.findById(id).orElse(null);

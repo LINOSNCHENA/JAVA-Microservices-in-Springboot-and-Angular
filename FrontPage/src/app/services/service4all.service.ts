@@ -13,7 +13,6 @@ import { map } from 'rxjs/operators';
 })
 export class Service4allService {
   private url1:string='http://localhost:8080/full';
-  private url2:string='http://localhost:2020/second';
   private headers = new Headers ({'Content-Type' : 'application/json'});
   private options = new RequestOptions({headers:this.headers});      // Data type Server
   private worker:Worker;
@@ -43,13 +42,14 @@ saveOrUpdateItem(worker:Worker) {
       .map((response:Response)=>response.json())
       .catch(this.errorPost);    }
 deleteItem(id:Number){
-    return this._http.delete(this.url2+'/accounts/'+id,this.options)
+    return this._http.delete(this.url1+'/accounts/'+id,this.options)
     .map((response:Response)=>response.json())
     .catch(this.errorPost);  }
 
 errorPost(error:Response) {  
       return Observable.throw(error||"SERVER ERROR");  }
-      setter(worker:Worker) { this.worker=worker;  }
-      getter() {   return this.worker;  }
+
+setter(worker:Worker)         {   this.worker=worker;  }
+getter()                      {   return this.worker;  }
 }
 ///++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++

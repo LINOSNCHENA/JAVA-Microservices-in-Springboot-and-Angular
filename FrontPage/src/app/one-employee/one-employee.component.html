@@ -1,43 +1,43 @@
 <br>
 <header class="masthead bg-primary text-white text-center">
   <div class="container"><br>
-
-    <h2 class="text-uppercase mb-0">REGISTRAR PAYROLL AND DEDUCTIONS </h2>
-
+    <h2 class="text-uppercase mb-0">ENTRY TO DEPARTMENT </h2>
     <hr class="star-light">
   </div>
 </header>
+
 <div class="container">
 
-    <form (ngSubmit) = "processForm()">
-        <div class="form group">
-          <label for="id"> Automatically issues staff Identity Number </label> 
-          <br><br>
-       </div>  
-
-       <div class="form group">
-        <label for="names"> Full Names</label>
-        <input type="text" name="fname"  class="form-control" [(ngModel)]="worker.names">
-    </div>
-        <div class="form group">
-          <label for="quantity">Post</label>
-          <input type="text" name="lname" class="form-control" [(ngModel)]="worker.post">
-      </div>  
-        <div class="form group">
-          <label for="date">Dept</label>
-          <input type="text" name="mname" class="form-control" [(ngModel)]="worker.dept">
-      </div>
+    <form (ngSubmit) = "completeForm()">
       <div class="form group">
-        <label for="quantity">Salary</label>
+      <label for="id"> Identity Number </label> 
+    </div>  
+
+    <div class="form group">
+        <label for="name"> Full-Name</label>
+        <input type="text" name="fname"  class="form-control" [(ngModel)]="worker.name">
+    </div>
+
+    <div class="form group">
+        <label for="post">Position</label>
+        <input type="text" name="lname" class="form-control" [(ngModel)]="worker.post">
+    </div>  
+    
+    <div class="form group">
+        <label for="dept">Department</label>
+        <input type="text" name="mname" class="form-control" [(ngModel)]="worker.dept">
+    </div>
+    
+    <div class="form group">
+        <label for="salary">Salary</label>
         <input type="text" name="nname" class="form-control" [(ngModel)]="worker.salary">
     </div>
+    
     <div class="form group">
-      <label for="quantity">Status</label>
+      <label for="status">Status</label>
       <input type="text" name="status" class="form-control" [(ngModel)]="worker.status">
-  </div>    <div class="form group">
-    <label for="createdAt">date</label>
-    <input type="date" name="createdAt" class="form-control" [(ngModel)]="worker.createdAt">
-</div>
-        <input type="submit" value="save" class="btn btn-success">
+    </div>    
+  
+     <input type="submit" value="save" class="btn btn-success">
     </form>
   </div>

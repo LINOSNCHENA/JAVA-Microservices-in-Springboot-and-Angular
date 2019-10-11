@@ -14,19 +14,16 @@ export class OneEmployeeComponent implements OnInit {
   ngOnInit() 
   {   this.worker=this._userService.getter();  }
 
-  processForm(){ console.log(this.worker);
-// tesst
+  completeForm(){ console.log(this.worker);
+// test for worker presence
     if(this.worker.id==undefined){
        this._userService.addItem(this.worker).subscribe((worker)=>{console.log(worker);
-       this._rotuer.navigate(['/']); },(error)=>{console.log(error); });
-    }else{
-// Both worlds
+       this._rotuer.navigate(['/']); },(error)=>{console.log(error); });  }
+    else
+    {
+// Both update and create worker
        this._userService.saveOrUpdateItem(this.worker).subscribe((worker)=>{console.log(worker);
        this._rotuer.navigate(['/']);},(error)=>{ console.log(error); });
     }
 }
 }
-
-
-
-

@@ -11,7 +11,7 @@ import javax.persistence.Table;
 public class wEmployee {
 	@Id
 	@Column(name = "id")
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 
 	@Column(name = "name") // Next seven columns
@@ -50,5 +50,7 @@ public wEmployee(String name, String post, String dept,
 	public String getStatus()  		 	     {	return status;		  }
 	public void setStatus(String status)     {	this.status = status; }
 
+	public String getCreatedt()  		 	     {	return createdt;		  }
+	public void setCreatedt(String createdt)     {	this.createdt = createdt; }
 
 }
