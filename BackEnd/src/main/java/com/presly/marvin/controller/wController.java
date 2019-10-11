@@ -16,65 +16,61 @@ import com.presly.marvin.entity.wRepository;
 import com.presly.marvin.model.wEmployee;
 
 @RestController
-@RequestMapping("first")
+@RequestMapping("full")
 @CrossOrigin(origins = "http://localhost:4200")
 
 public class wController {
 	@Autowired
-	wRepository employeeX;
+	wRepository employeesOfCMIS;
 
-
-// http://8080/first/accounts/				    	//		GET/PUT/DELETE(*3)
+@PostMapping(path = "accounts")											// POST
+	public wEmployee addItem(@RequestBody wEmployee employeeAppointed)
+		 { return employeesOfCMIS.save(employeeAppointed); }
+ 
+// http://8080/full/accounts/	
+@GetMapping(path = "accounts/{id}")										//	GET (*x2)
+	public wEmployee getItem(@PathVariable("id") int id)
+		{ return employeesOfCMIS.findById(id).orElse(null);}
 @GetMapping(path = "accounts")
 	public List<wEmployee> getItems()
-		 { return employeeX.findAll();	}
-
-@PostMapping(path = "accounts")
-	public wEmployee addItem(@RequestBody wEmployee employeeY)
-		 { return employeeX.save(employeeY); }
-
-@DeleteMapping(path = "accounts")
-	public void deleteAllItems(wEmployee employeeY) 
-		  {	employeeX.deleteAll();	}
-
-// http://8080/first/account/:[id]					//		GET/PUT/DELETE(*5)
-   @PutMapping(path = "account")
-		  public wEmployee saveOrUpdateItem(@RequestBody wEmployee employeeY) 
-			  { return employeeX.save(employeeY);	}	  
-
-	@GetMapping(path = "account/{id}")
-	public wEmployee getItem(@PathVariable("id") int id)
-		{ return employeeX.findById(id).orElse(null);}
+		 { return employeesOfCMIS.findAll();	}
 		
-	@DeleteMapping(path = "account/{id}")
-	public String deleteItem(@PathVariable int id)
-		 {	employeeX.deleteById(id);		
-			return "Employees' record erased successfully";	}
+// http://8080/full/account/:[id]										//	UPDATE
+@PutMapping(path = "accounts")
+	public wEmployee saveOrUpdateItem(@RequestBody wEmployee employeeCurrent) 
+			  { return employeesOfCMIS.save(employeeCurrent);	}	
 
-	@PutMapping(path = "account/{id}")
+@PutMapping(path = "accounts/{id}")										// UPDATING
 	public wEmployee updateItemById(@PathVariable int id, 
-	@Valid @RequestBody wEmployee employeeY) {
-		wEmployee employeeZ = employeeX.findById(id).orElse(null);
-		employeeZ.setName(employeeY.getName());		
-		employeeZ.setDept(employeeY.getDept());		
-		employeeZ.setPost(employeeY.getPost());
-		employeeZ.setSalary(employeeY.getSalary());
-		employeeZ.setStatus(employeeY.getStatus());
-		//employeeZ.setCreatedt(employeeY.getCreatedt());
-		wEmployee updatedItem = employeeX.save(employeeZ);		
+	@Valid @RequestBody wEmployee employeePromoted) {
+		wEmployee employeeZ = employeesOfCMIS.findById(id).orElse(null);
+		employeeZ.setName(employeePromoted.getName());		
+		employeeZ.setDept(employeePromoted.getDept());		
+		employeeZ.setPost(employeePromoted.getPost());
+		employeeZ.setSalary(employeePromoted.getSalary());
+		employeeZ.setStatus(employeePromoted.getStatus());
+		wEmployee updatedItem = employeesOfCMIS.save(employeeZ);		
 		return updatedItem;	}
 
-	@PatchMapping(path = "accounts/{id}")
+@PatchMapping(path = "accounts/{id}")									// Patch/updating-(P)
 	public wEmployee patchUpdateItemById(@PathVariable int id, 
-	@Valid @RequestBody wEmployee employeeZ) {
-		wEmployee employeeY = employeeX.findById(id).orElse(null);
-		employeeY.setName(employeeZ.getName());
-		employeeY.setDept(employeeZ.getDept());		
-		employeeY.setPost(employeeZ.getPost());
-		employeeY.setSalary(employeeZ.getSalary());
-		employeeY.setStatus(employeeZ.getStatus());
-		//employeeY.setCreatedt(employeeZ.getCreatedt());
-		wEmployee updatedItem = employeeX.save(employeeY);
+	@Valid @RequestBody wEmployee employeeDemoted) {
+		wEmployee employeeY = employeesOfCMIS.findById(id).orElse(null);
+		employeeY.setName(employeeDemoted.getName());
+		employeeY.setDept(employeeDemoted.getDept());		
+		employeeY.setPost(employeeDemoted.getPost());
+		employeeY.setSalary(employeeDemoted.getSalary());
+		employeeY.setStatus(employeeDemoted.getStatus());
+		wEmployee updatedItem = employeesOfCMIS.save(employeeY);
 		return updatedItem; 
 	}
-	}
+
+@DeleteMapping(path = "accounts/{id}")							// DELETING
+	public String deleteItem(@PathVariable int id)
+		 {	employeesOfCMIS.deleteById(id);		
+			return "Employees' record erased successfully";	}
+
+@DeleteMapping(path = "accounts")								// DELETE-(pending)
+	public void deleteAllItems(wEmployee employeeFired) 
+		{	employeesOfCMIS.deleteAll();	}
+}

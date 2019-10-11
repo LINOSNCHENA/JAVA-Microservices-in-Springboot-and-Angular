@@ -12,14 +12,14 @@ import { map } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class Service4allService {
-  private url1:string='http://localhost:8080/first';
+  private url1:string='http://localhost:8080/full';
   private url2:string='http://localhost:2020/second';
   private headers = new Headers ({'Content-Type' : 'application/json'});
   private options = new RequestOptions({headers:this.headers});      // Data type Server
   private worker:Worker;
   constructor(private _http : Http ) { }
 
-// http://localhost/8080/first/accounts                             //  GET+POST+DELETE(3)
+// http://localhost/8080/full/accounts                             //  GET+POST+DELETE(3)
 getItems() {
     return  this._http.get(this.url1+'/accounts',this.options)
     .map((response:Response)=>response.json())
@@ -33,17 +33,17 @@ deleteItems(id:Number){
   .map((response:Response)=>response.json())
   .catch(this.errorPost);}
 
-// http://localhost/8080/first/account/:id                          //  GET/PUT/DELETE/ERROR(4)
+// http://localhost/8080/full/accounts/:id                          //  GET/PUT/DELETE/ERROR(4)
 getItem(id:Number){
-    return this._http.get(this.url1+'/account/'+id,this.options)
+    return this._http.get(this.url1+'/accounts/'+id,this.options)
      .map((response:Response)=>response.json())
      .catch(this.errorPost);  }
 saveOrUpdateItem(worker:Worker) {
-      return this._http.put(this.url1+'/account',JSON.stringify(worker),  this.options)
+      return this._http.put(this.url1+'/accounts',JSON.stringify(worker),  this.options)
       .map((response:Response)=>response.json())
       .catch(this.errorPost);    }
 deleteItem(id:Number){
-    return this._http.delete(this.url2+'/account/'+id,this.options)
+    return this._http.delete(this.url2+'/accounts/'+id,this.options)
     .map((response:Response)=>response.json())
     .catch(this.errorPost);  }
 

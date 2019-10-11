@@ -14,7 +14,7 @@ public class wEmployee {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
 
-	@Column(name = "name") // Next seven colluns
+	@Column(name = "name") // Next seven columns
 	private String name;
 	@Column(name = "post")
 	private String post;
