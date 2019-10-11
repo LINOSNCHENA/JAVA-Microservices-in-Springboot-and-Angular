@@ -14,8 +14,8 @@ public class wEmployee {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
 
-	@Column(name = "names") // Next seven collumns
-	private String names;
+	@Column(name = "name") // Next seven colluns
+	private String name;
 	@Column(name = "post")
 	private String post;
 	@Column(name = "dept")
@@ -24,21 +24,21 @@ public class wEmployee {
 	private int salary;
 	@Column(name = "status")
 	private String status;
-	@Column(name = "createdAt")
-	private String createdAt;
+	@Column(name = "createdt")
+	private String createdt;
 
-public wEmployee(String names, String post, String dept,
-		int salary, String status, String createdAt) {
-		this.names = names;			this.post = post;		
+public wEmployee(String name, String post, String dept,
+		int salary, String status, String createdt) {
+		this.name = name;			this.post = post;		
 		this.dept = dept;			this.salary = salary;	
-		this.status = status;		this.createdAt = createdAt;	 }
+		this.status = status;		this.createdt = createdt;	 }
 
 	public wEmployee()     			    {}
 	
 	public int getId()		 		    {	return id;			}
 	public void setId(int id) 		    {	this.id = id;		}
-	public String getNames()  		    {	return names;		}
-	public void setNames(String names)  {   this.names = names;	}
+	public String getName()  		    {	return name;		}
+	public void setName(String name)  {   this.name = name;	}
 
 	public String getDept()  		  {	return dept;			}
 	public void setDept(String dept)  {	this.dept = dept;		}
@@ -50,7 +50,5 @@ public wEmployee(String names, String post, String dept,
 	public String getStatus()  		 	     {	return status;		  }
 	public void setStatus(String status)     {	this.status = status; }
 
-	public String getCreatedAt()                {	return createdAt;			}
-	public void setCreatedAt(String createdAt)  {	this.createdAt = createdAt;	}
-	
+
 }

@@ -55,12 +55,12 @@ public class wController {
 	public wEmployee updateItemById(@PathVariable int id, 
 	@Valid @RequestBody wEmployee employeeY) {
 		wEmployee employeeZ = employeeX.findById(id).orElse(null);
-		employeeZ.setNames(employeeY.getNames());		
+		employeeZ.setName(employeeY.getName());		
 		employeeZ.setDept(employeeY.getDept());		
 		employeeZ.setPost(employeeY.getPost());
 		employeeZ.setSalary(employeeY.getSalary());
 		employeeZ.setStatus(employeeY.getStatus());
-		employeeZ.setCreatedAt(employeeY.getCreatedAt());
+		//employeeZ.setCreatedt(employeeY.getCreatedt());
 		wEmployee updatedItem = employeeX.save(employeeZ);		
 		return updatedItem;	}
 
@@ -68,12 +68,12 @@ public class wController {
 	public wEmployee patchUpdateItemById(@PathVariable int id, 
 	@Valid @RequestBody wEmployee employeeZ) {
 		wEmployee employeeY = employeeX.findById(id).orElse(null);
-		employeeY.setNames(employeeZ.getNames());
+		employeeY.setName(employeeZ.getName());
 		employeeY.setDept(employeeZ.getDept());		
 		employeeY.setPost(employeeZ.getPost());
 		employeeY.setSalary(employeeZ.getSalary());
 		employeeY.setStatus(employeeZ.getStatus());
-		employeeY.setCreatedAt(employeeZ.getCreatedAt());
+		//employeeY.setCreatedt(employeeZ.getCreatedt());
 		wEmployee updatedItem = employeeX.save(employeeY);
 		return updatedItem; 
 	}

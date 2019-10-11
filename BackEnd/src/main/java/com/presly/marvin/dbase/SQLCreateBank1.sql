@@ -11,7 +11,7 @@ CREATE TABLE dbo.bank1
    dept  [NVARCHAR](60) NOT NULL,
    salary  INT DEFAULT '989' not null,  
    status  [NVARCHAR](60) DEFAULT "PembaX" not NULL, 
-   createdAT DATETIME default GETDATE() not null
+   createdT DATETIME default GETDATE() not null
 );
 GO
 -- Create the table in the specified schema
