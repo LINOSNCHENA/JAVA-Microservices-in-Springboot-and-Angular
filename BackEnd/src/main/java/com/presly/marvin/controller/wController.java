@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import com.presly.marvin.entity.wRepository;
+import com.presly.marvin.view.wRepository;
 import com.presly.marvin.model.wEmployee;
 
 @RestController

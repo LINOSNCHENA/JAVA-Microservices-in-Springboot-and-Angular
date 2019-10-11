@@ -7,11 +7,11 @@ id INT auto_increment PRIMARY KEY,
 name VARCHAR (50) NOT NULL,  
 dept VARCHAR (50) NOT NULL,
 post VARCHAR (50) NOT NULL, 
-salary int NOT NULL,
-status VARCHAr (50) DEFAULT "Temporal",
-createdt TIMESTAMP DEFAULT CURRENT_TIMESTAMP);
+salary int NOT NULL default 8080,
+status VARCHAR (50) NOT NULL DEFAULT "Temporal",
+createdt DATETIME default now());
 
-INSERT INTO bank1 ( id, name, dept, post, salary )
+INSERT INTO bank1 ( name, dept, post, salary )
  VALUES
  ("KENNETH KAUNDA", "Enginering","Director", 21200 ),   ("Lorena Marvin", "Admin","Administrator", 18500 ),
  ("Nikolas Marvin", "Engineering","Manager", 18500 ),( "JURIOUS NYERERE", "PRESIDENT","TANZANIA", 32500 );
