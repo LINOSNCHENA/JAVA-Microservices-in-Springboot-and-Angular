@@ -14,7 +14,7 @@ public class wEmployee {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 
-	@Column(name = "name") // Next seven columns
+	@Column(name = "name") // Next six columns
 	private String name;
 	@Column(name = "post")
 	private String post;
@@ -45,12 +45,12 @@ public wEmployee(String name, String post, String dept,
 	public String getPost()  		  {	return post;			}
 	public void setPost(String post)  {	this.post = post;		}
 
-	public int getSalary()          		 {	return salary;		  }
-	public void setSalary(int salary)		 {	this.salary = salary; }
-	public String getStatus()  		 	     {	return status;		  }
-	public void setStatus(String status)     {	this.status = status; }
+	public int getSalary()          		 {	return salary;		 	 }
+	public void setSalary(int salary)		 {	this.salary = salary;	 }
+	public String getStatus()  		 	     {	return status;		 	 }
+	public void setStatus(String status)     {	this.status = status; 	 }
 
-	public String getCreatedt()  		 	     {	return createdt;		  }
-	public void setCreatedt(String createdt)     {	this.createdt = createdt; }
+	public String getCreatedt()  		 	 {	return createdt;		  }
+	public void setCreatedt(String createdt) {	this.createdt = createdt; }
 
 }
