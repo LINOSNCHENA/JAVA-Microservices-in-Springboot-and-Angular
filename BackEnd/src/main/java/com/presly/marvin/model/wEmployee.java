@@ -1,6 +1,7 @@
 package com.presly.marvin.model;
 
-import java.time.LocalDate;
+import java.sql.Date;
+//import java.time.LocalDate;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -29,10 +30,10 @@ public class wEmployee {
 	private String status;
 
    	@Column(name = "createdt",nullable = false,  columnDefinition="TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
-	private LocalDate createdt;
+	private Date createdt;
 
 public wEmployee(String name, String post, String dept,
-		int salary, String status, LocalDate createdt) {
+		int salary, String status, Date createdt) {
 		this.name = name;			this.post = post;		
 		this.dept = dept;			this.salary = salary;	
 		this.status = status;		this.createdt = createdt;	 }
@@ -54,7 +55,7 @@ public void setSalary(int salary)		 {	this.salary = salary;	 }
 public String getStatus()  		 	     {	return status;		 	 }
 public void setStatus(String status)     {	this.status = status; 	 }
 
-public LocalDate getCreatedt()  		 	{	return createdt;		  }
-public void setCreatedt(LocalDate createdt) {	this.createdt = createdt; }
+public Date getCreatedt()  		 	   {	return createdt;		  }
+public void setCreatedt(Date createdt) {	this.createdt = createdt; }
 
 }

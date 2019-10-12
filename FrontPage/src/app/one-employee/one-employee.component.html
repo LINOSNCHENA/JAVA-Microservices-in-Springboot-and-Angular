@@ -14,40 +14,42 @@
     </div>  
 
     <div class="form group">
-        <label for="name"> Full-Name</label>
+        <label for="name"> FULL-NAME</label>
         <input type="text" name="fname"  class="form-control" [(ngModel)]="worker.name">
     </div>
 
     <div class="form group">
-        <label for="post">Position</label> <select name="dept" width="600">
-          <option value="computing">Lecturer</option>
-          <option value="accounting">Administrator</option>
+        <label for="post">POSITION</label> 
+        <select name="post"  class="form-control" [(ngModel)]="worker.post">
+          <option value="computing">Administrator</option>
+          <option value="accounting">Lecturer</option>
           <option value="humanresource">Contractor</option>
-          <option value="finance">Others</option></select> 
-        <input type="text" name="lname" class="form-control" [(ngModel)]="worker.post">
+          <option value="finance">Labourer</option>       
+          <option value="others">Others- Please Specify Below</option></select>
     </div>  
     
     <div class="form group">
-        <label for="dept">JOB DEPARTMENT</label> <select name="dept" width="600">
+        <label for="dept">JOB DEPARTMENT</label>
+        <select name="dept"  class="form-control" [(ngModel)]="worker.dept">
           <option value="computing">Computing</option>
           <option value="accounting">Accounting</option>
           <option value="humanresource">Human Resource</option>
-          <option value="finance">Finance</option></select> 
-        <input type="text" name="mname" class="form-control" [(ngModel)]="worker.dept">
+          <option value="finance">Finance</option>       
+          <option value="others">Others- Please Specify Below</option></select>
     </div>
     
     <div class="form group">
-        <label for="salary">Salary</label>
+        <label for="salary">SALARY</label>
         <input type="text" name="nname" class="form-control" [(ngModel)]="worker.salary">
     </div>
     
     <div class="form group">
-      <label for="status">Status</label>
+      <label for="status">STATUS</label>
       <input type="text" name="status" class="form-control" [(ngModel)]="worker.status">
     </div>    
 
     <div class="form group">
-      <label for="createdt">Status</label>
+      <label for="createdt">CREATED AT</label>
       <input type="hide" name="createdt" class="form-control" [(ngModel)]="worker.createdt">
     </div> 
   
