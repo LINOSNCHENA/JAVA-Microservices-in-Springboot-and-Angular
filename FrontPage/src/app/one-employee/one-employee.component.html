@@ -19,7 +19,11 @@
     </div>
 
     <div class="form group">
-        <label for="post">Position</label>
+        <label for="post">Position</label> <select name="dept" width="600">
+          <option value="computing">Lecturer</option>
+          <option value="accounting">Administrator</option>
+          <option value="humanresource">Contractor</option>
+          <option value="finance">Others</option></select> 
         <input type="text" name="lname" class="form-control" [(ngModel)]="worker.post">
     </div>  
     
