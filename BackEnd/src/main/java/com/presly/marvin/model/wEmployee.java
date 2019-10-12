@@ -1,5 +1,6 @@
 package com.presly.marvin.model;
 
+import java.time.LocalDate;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -27,34 +28,33 @@ public class wEmployee {
 	@Column(name = "status")
 	private String status;
 
-	//@CreationTimestamp
    	@Column(name = "createdt",nullable = false,  columnDefinition="TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
-	private String createdt;
+	private LocalDate createdt;
 
 public wEmployee(String name, String post, String dept,
-		int salary, String status, String createdt) {
+		int salary, String status, LocalDate createdt) {
 		this.name = name;			this.post = post;		
 		this.dept = dept;			this.salary = salary;	
 		this.status = status;		this.createdt = createdt;	 }
 
-	public wEmployee()     			    {}
+public wEmployee()     			    {}
 	
-	public int getId()		 		    {	return id;			}
-	public void setId(int id) 		    {	this.id = id;		}
-	public String getName()  		    {	return name;		}
-	public void setName(String name)  {   this.name = name;	}
+public int getId()		 		    {	return id;			}
+public void setId(int id) 		    {	this.id = id;		}
+public String getName()  		    {	return name;		}
+public void setName(String name)  {   this.name = name;	}
 
-	public String getDept()  		  {	return dept;			}
-	public void setDept(String dept)  {	this.dept = dept;		}
-	public String getPost()  		  {	return post;			}
-	public void setPost(String post)  {	this.post = post;		}
+public String getDept()  		  {	return dept;			}
+public void setDept(String dept)  {	this.dept = dept;		}
+public String getPost()  		  {	return post;			}
+public void setPost(String post)  {	this.post = post;		}
 
-	public int getSalary()          		 {	return salary;		 	 }
-	public void setSalary(int salary)		 {	this.salary = salary;	 }
-	public String getStatus()  		 	     {	return status;		 	 }
-	public void setStatus(String status)     {	this.status = status; 	 }
+public int getSalary()          		 {	return salary;		 	 }
+public void setSalary(int salary)		 {	this.salary = salary;	 }
+public String getStatus()  		 	     {	return status;		 	 }
+public void setStatus(String status)     {	this.status = status; 	 }
 
-	public String getCreatedt()  		 	 {	return createdt;		  }
-	public void setCreatedt(String createdt) {	this.createdt = createdt; }
+public LocalDate getCreatedt()  		 	{	return createdt;		  }
+public void setCreatedt(LocalDate createdt) {	this.createdt = createdt; }
 
 }

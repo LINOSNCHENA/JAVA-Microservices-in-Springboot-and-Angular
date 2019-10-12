@@ -7,8 +7,8 @@ id INT auto_increment PRIMARY KEY,
 name VARCHAR (50) NOT NULL,  
 dept VARCHAR (50) NOT NULL,
 post VARCHAR (50) NOT NULL, 
-salary int NOT NULL default 8080,
-status VARCHAR (50) NOT NULL DEFAULT "Temporal",
+salary int default 8080 not null,
+status VARCHAR (50) DEFAULT "Temporal" not null,
 createdt DATETIME default now());
 
 INSERT INTO bank1 ( name, dept, post, salary )

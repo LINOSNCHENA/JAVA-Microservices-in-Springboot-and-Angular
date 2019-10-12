@@ -10,7 +10,7 @@
 
     <form (ngSubmit) = "completeForm()">
       <div class="form group">
-      <label for="id"> Identity Number </label> 
+      <label for="id"> Identity Number INVISIBLE</label> 
     </div>  
 
     <div class="form group">
@@ -24,7 +24,11 @@
     </div>  
     
     <div class="form group">
-        <label for="dept">Department</label>
+        <label for="dept">JOB DEPARTMENT</label> <select name="dept" width="600">
+          <option value="computing">Computing</option>
+          <option value="accounting">Accounting</option>
+          <option value="humanresource">Human Resource</option>
+          <option value="finance">Finance</option></select> 
         <input type="text" name="mname" class="form-control" [(ngModel)]="worker.dept">
     </div>
     
@@ -37,6 +41,11 @@
       <label for="status">Status</label>
       <input type="text" name="status" class="form-control" [(ngModel)]="worker.status">
     </div>    
+
+    <div class="form group">
+      <label for="createdt">Status</label>
+      <input type="hide" name="createdt" class="form-control" [(ngModel)]="worker.createdt">
+    </div> 
   
      <input type="submit" value="save" class="btn btn-success">
     </form>
