@@ -1,5 +1,4 @@
 package com.presly.marvin.model;
-
 import java.util.Date;
 
 import javax.persistence.Column;
