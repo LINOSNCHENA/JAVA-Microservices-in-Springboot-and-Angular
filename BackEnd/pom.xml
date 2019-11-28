@@ -10,9 +10,9 @@
 	</parent>
 	<groupId>com.presly</groupId>
 	<artifactId>marvin</artifactId>
-	<version>fullstack</version>
+	<version>AngularStack</version>
 	<name>marvangular</name>
-	<description>Fullstack Angular/SpringBoot/Postgresql project for workers</description>
+	<description>Fullstack App-Angular/SpringBoot/Postgresql for participating candidates</description>
 
 	<properties>
 		<java.version>1.8</java.version>
