@@ -11,7 +11,7 @@ The tested databases are MSSQL, MySQL and PostgreSQL. Full stack application com
 2. Java (Spring boot)
 3. Database(MSSQL)
 4. Database(MySQL)
-5. Database(PostGress)
+5. Database(PostgreSQL)
 6. Maven
 7. NPM
 8. Catalina Run
@@ -24,19 +24,20 @@ Note: The key field in MySQL and MSSQL is auto-increment where the key field is 
 
 Two separate modules make up this application
 1. Back end module use the following Command
-	mvn clean package
+    mvn clean package
         mvn spring boot run
 2. Front End application use the following command
         npm start
         npm stop
 
 ## Interface UX
- Below are some Scren shots fromr the application
+ Below are some Screens shots from the application
 
 ![ Application Muntu Interface page #1 ](https://github.com/LINOSNCHENA/Fullstack-system-in-SpringAngularMSSQL-APP/blob/master/page1.png)
 
-![ Application Muntu Interface page #2 ] (https://github.com/LINOSNCHENA/Fullstack-system-in-SpringAngularMSSQL-APP/blob/master/page2.png)
+![ Application Muntu Interface page #2 ](https://github.com/LINOSNCHENA/Fullstack-system-in-SpringAngularMSSQL-APP/blob/master/page2.png)
 
 ![ Application Muntu Interface page #1 ](https://github.com/LINOSNCHENA/Fullstack-system-in-SpringAngularMSSQL-APP/blob/master/page2.png)
  
+
 
