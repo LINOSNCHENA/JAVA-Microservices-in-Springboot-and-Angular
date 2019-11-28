@@ -1,4 +1,4 @@
-# CORDINATION  IN DIFFERENT FRAMWORKS (BACKEND & FRONTEND)
+# BACKEND & FRONTEND IN DIFFERENT FRAMEWORKS
 
 The purpose of this application is to create a full-stack simple application by combining two of the current popular frames works. Angular and Spring-Boot
 
