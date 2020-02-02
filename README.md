@@ -1,4 +1,4 @@
-# TWO PARTS MICROSERVICES AS BACKEND & FRONTEND APIs
+# SIMPLE MICROSERVICE AS BACKEND & FRONTEND APIs
 
 The purpose of this application is to create a full-stack simple application by combining two of the current popular frameworks. Angular, Spring-Boot and three different databases. The implementation works with three types of databases.Several CRUD operations are implemented and exploited using three different databases
 
@@ -6,7 +6,7 @@ The purpose of this application is to create a full-stack simple application by 
 
 The development full-stack application composes of;
 1. JavaScript(Angular 8)
-2. Java 8-13 (Spring boot)
+2. Java 8(Spring boot)
 3. Database(MSSQL,Postgresql,MySQL)
 4. Pending Database(MongoDB, H2)
 5. Maven
