@@ -28,10 +28,12 @@ public class Muntu {
 	@Column(name = "status")
 	private String status;
 
-	@Column(name = "createdt", nullable = false, columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
+	@Column(name = "createdt", nullable = false, 
+	columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
 	private Date createdt;
 
-	public Muntu(String name, String post, String dept, int salary, String status, Date createdt) {
+	public Muntu(String name, String post, String dept, 
+	int salary, String status, Date createdt) {
 		this.name = name;
 		this.post = post;
 		this.dept = dept;
@@ -40,8 +42,7 @@ public class Muntu {
 		this.createdt = createdt;
 	}
 
-	public Muntu() {
-	}
+	public Muntu() {}
 	
 public int getId()		 		    {	return id;			}
 public void setId(int id) 		    {	this.id = id;		}
@@ -60,7 +61,5 @@ public String getStatus()  		 	   {	return status;		 	 }
 public void setStatus(String status)   {	this.status = status; 	 }
 public Date getCreatedt()  		 	   {	return createdt;		  }
 public void setCreatedt(Date createdt) {	this.createdt = createdt; }
-
-
 
 }

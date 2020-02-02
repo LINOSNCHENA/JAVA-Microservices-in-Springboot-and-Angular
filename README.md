@@ -1,39 +1,36 @@
-# BACKEND & FRONTEND IN DIFFERENT FRAMEWORKS
+# TWO PARTS MICROSERVICES AS BACKEND & FRONTEND APIs
 
-The purpose of this application is to create a full-stack simple application by combining two of the current popular frames works. Angular and Spring-Boot
+The purpose of this application is to create a full-stack simple application by combining two of the current popular frameworks. Angular, Spring-Boot and three different databases. The implementation works with three types of databases.Several CRUD operations are implemented and exploited using three different databases
 
-Several CRUD operations are implemented and exploited using three different databases
+### Technology Stack exploited
 
-## Technology Stack
-
-The tested databases are MSSQL, MySQL and PostgreSQL. Full stack application composes of;
+The development full-stack application composes of;
 1. JavaScript(Angular 8)
-2. Java (Spring boot)
-3. Database(MSSQL)
-4. Database(MySQL)
-5. Database(PostgreSQL)
-6. Maven
-7. NPM
-8. Catalina Run
-9. Hibernate
-10. Tomcat Server
+2. Java 8-13 (Spring boot)
+3. Database(MSSQL,Postgresql,MySQL)
+4. Pending Database(MongoDB, H2)
+5. Maven
+6. Catalina Run
+7. Hibernate
+8. Tomcat Server
 
-Note: The key field in MySQL and MSSQL is auto-increment where the key field is serial the auto-increment in PostgreSQL. 
+Note: The database key-field in MySQL and MSSQL is auto-increment while in the Postgressql database the key-field used is serial instead of auto-increment. Need changes in the data model where necessary. 
 
-## Execution Commands
+### Execution Commands
 
 Two separate modules make up this application
-1. Back end module use the following Command
-    mvn clean package
+1. Backend module use the following Command
+        mvn clean package
         mvn spring boot run
 2. Front End application use the following command
         npm start
         npm stop
 
 ## Interface UX
- Below are some Screens shots from the application
+ Below are screens shots from the application
 
 ![ Application Muntu Interface page #1 ](https://github.com/LINOSNCHENA/Fullstack-system-in-SpringAngularMSSQL-APP/blob/master/page1.png)
 
+![ Application Muntu Interface page #1 ](https://github.com/LINOSNCHENA/Fullstack-system-in-SpringAngularMSSQL-APP/blob/master/page2.png)
 
 
