@@ -28,18 +28,18 @@ public class Muntu {
 	@Column(name = "status")
 	private String status;
 
-	@Column(name = "createdt", nullable = false, 
+	@Column(name = "createdat", nullable = false, 
 	columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
-	private Date createdt;
+	private Date createdat;
 
 	public Muntu(String name, String post, String dept, 
-	int salary, String status, Date createdt) {
+	int salary, String status, Date createdat) {
 		this.name = name;
 		this.post = post;
 		this.dept = dept;
 		this.salary = salary;
 		this.status = status;
-		this.createdt = createdt;
+		this.createdat = createdat;
 	}
 
 	public Muntu() {}
@@ -59,7 +59,7 @@ public void setSalary(int salary)		 {	this.salary = salary;	 }
 
 public String getStatus()  		 	   {	return status;		 	 }
 public void setStatus(String status)   {	this.status = status; 	 }
-public Date getCreatedt()  		 	   {	return createdt;		  }
-public void setCreatedt(Date createdt) {	this.createdt = createdt; }
+public Date getCreatedat()  		 	   {	return createdat;		  }
+public void setCreatedt(Date createdat) {	this.createdat = createdat; }
 
 }
