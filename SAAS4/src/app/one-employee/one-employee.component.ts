@@ -15,7 +15,7 @@ export class OneEmployeeComponent implements OnInit {
   ngOnInit()   {   this.worker=this._userService.getter();  }
 
   completeForm(){ console.log(this.worker);
-// test for worker presence
+// Test the presence/absence of a worker
     if(this.worker.id==undefined){
        this._userService.addItem(this.worker).subscribe((worker)=>{console.log(worker);
        this._rotuer.navigate(['/']); },(error)=>{console.log(error); });  }

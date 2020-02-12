@@ -29,7 +29,8 @@ deleteItem(worker){
         ,(error)=>{console.log(error);});   }
         
 // new worker
-newItem(){
+//newItem(){
+createItem(){
    let worker = new Worker();
     this._userService.setter(worker);
      this._router.navigate(['/enrolls']);   }

@@ -1,6 +1,6 @@
-# SIMPLE MICROSERVICE AS BACKEND & FRONTEND APIs
+# SIMPLE MICROSERVICES AS BACKEND & FRONTEND APIs
 
-The purpose of this application is to create a full-stack simple application by combining two of the current popular frameworks. Angular, Spring-Boot and three different databases. The implementation works with three types of databases.Several CRUD operations are implemented and exploited using three different databases
+The purpose of this application is to create a full-stack simple application by combining two of the current popular frameworks. Angular and Spring-Boot, which includes three different databases alternatives. The implementation is successfull using the three types of databases. Several CRUD operations are implemented and exploited using three databases with a uniform interface as JSON data connectivity
 
 ### Technology Stack exploited
 
@@ -14,7 +14,7 @@ The development full-stack application composes of;
 7. Hibernate
 8. Tomcat Server
 
-Note: The database key-field in MySQL and MSSQL is auto-increment while in the Postgressql database the key-field used is serial instead of auto-increment. Need changes in the data model where necessary. 
+Note: In the database used the data type of the primary-key in MySQL and MSSQL is auto-increment while in the Postgresql database the primary key field used is serial. This is a minor diference in implementaion of MSSQL/MySQL and Postgresql primary key fields. Need changes in the data model design as necessary respectivily. 
 
 ### Execution Commands
 
@@ -32,5 +32,3 @@ Two separate modules make up this application
 ![ Application Muntu Interface page #1 ](https://github.com/LINOSNCHENA/Fullstack-system-in-SpringAngularMSSQL-APP/blob/master/page1.png)
 
 ![ Application Muntu Interface page #1 ](https://github.com/LINOSNCHENA/Fullstack-system-in-SpringAngularMSSQL-APP/blob/master/page2.png)
-
-

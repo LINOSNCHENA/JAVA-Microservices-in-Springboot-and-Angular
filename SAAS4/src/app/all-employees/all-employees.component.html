@@ -32,13 +32,13 @@
                 <td>{{worker.status}}</td>
                 <td>{{worker.createdat}}</td>
 
-                <td><button class="btn btn-danger" (click)="deleteItem(worker)">Delete</button>
-                    <button class="btn btn-primary" (click)="saveOrUpdateItem(worker)">Edit</button>
+                <td><button class="btn btn-danger" (click)="deleteItem(worker)">Erase</button>
+                    <button class="btn btn-primary" (click)="saveOrUpdateItem(worker)">Update</button>
                 </td>
             </tr>
         </tbody>
     </table>
-    <button class="btn btn-primary" (click)="newItem()">Add new entry to the department</button>
+    <button class="btn btn-primary" (click)="createItem()">Add new entry to the department</button>
 </div>
 
 <hr>
