@@ -36,8 +36,8 @@ getItem(id:Number){
      .catch(this.errorPost);  }
 deleteItem(id:Number){
     return this._http.delete(this.url1+'/accounts/'+id,this.options)
-    .map((response:Response)=>response.json())
-    .catch(this.errorPost);}
+    //.map((response:Response)=>response.json())
+    .catch(this.errorPost); }
 
 errorPost(error:Response) {  
       return Observable.throw(error||"SERVER ERROR");  }
