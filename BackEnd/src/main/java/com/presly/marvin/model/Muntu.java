@@ -23,11 +23,12 @@ public class Muntu {
 	private String post;
 	@Column(name = "dept")
 	private String dept;
-	@Column(name = "salary")
+	@Column(name = "salary", nullable = false, 
+	columnDefinition = "varchar(255) default '190850'")
 	private int salary;
-	@Column(name = "status")
+	@Column(name = "status", nullable = false, 
+	columnDefinition = "varchar(255) default '202040'")
 	private String status;
-
 	@Column(name = "createdat", nullable = false, 
 	columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
 	private Date createdat;
@@ -57,9 +58,9 @@ public void setPost(String post)  {	this.post = post;		}
 public int getSalary()          		 {	return salary;		 	 }
 public void setSalary(int salary)		 {	this.salary = salary;	 }
 
-public String getStatus()  		 	   {	return status;		 	 }
-public void setStatus(String status)   {	this.status = status; 	 }
-public Date getCreatedat()  		 	   {	return createdat;		  }
+public String getStatus()  		 	    {	return status;		 	    }
+public void setStatus(String status)    {	this.status = status; 	    }
+public Date getCreatedat()  		    {	return createdat;		    }
 public void setCreatedt(Date createdat) {	this.createdat = createdat; }
 
 }

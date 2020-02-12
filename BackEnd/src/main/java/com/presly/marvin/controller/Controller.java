@@ -17,8 +17,8 @@ import com.presly.marvin.view.Reposit;
 import com.presly.marvin.model.Muntu;
 
 @RestController
-@RequestMapping("full")
 @CrossOrigin(origins = "http://localhost:4200")
+@RequestMapping("full")
 
 public class Controller {
 @Autowired  	Reposit participantx;
@@ -36,12 +36,12 @@ public class Controller {
 	public List<Muntu> getItems()
 		 { return participantx.findAll();	}						//	GET #3
 		
-// http://8080/full/account/:[id]										//	UPDATE #4
+// http://8080/full/account/:[id]			SECOND OPTION							//	UPDATE #4
 @PutMapping(path = "accounts")
 	public Muntu saveOrUpdateItem(@RequestBody Muntu presentY) 
 			  { return participantx.save(presentY);	}	
 
-// http://8080/full/accounts/:[id]
+// http://8080/full/accounts/:[id]           OPTION ONE
 @PutMapping(path = "accounts/{id}")										// UPDATING #5
 	public Muntu updateItemById(@PathVariable int id, 
 	@Valid @RequestBody Muntu promotedX) {
@@ -74,8 +74,8 @@ public class Controller {
 		return "participants' record erased successfully";
 	}
 
-// http://8080/full/accounts
-@DeleteMapping(path = "accounts")								         // DELETE-#8p
+// http://8080/full/accounts		EVERYTHING
+ @DeleteMapping(path = "accounts")								         // DELETE-#8p
 	public void deleteAllItems(Muntu firedx) 
 		{	participantx.deleteAll();	}
 }

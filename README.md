@@ -1,6 +1,6 @@
 # SIMPLE MICROSERVICES AS BACKEND & FRONTEND APIs
 
-The purpose of this application is to create a full-stack simple application by combining two of the current popular frameworks. Angular and Spring-Boot, which includes three different databases alternatives. The implementation is successfull using the three types of databases. Several CRUD operations are implemented and exploited using three databases with a uniform interface as JSON data connectivity
+The purpose of this application is to create a full-stack simple application by combining two of the current popular frameworks. Angular and Spring-Boot, which includes three different databases alternatives. The implementation is successfull using the three types of databases. Several CRUD operations are implemented and exploited using three databases with a uniform interface as JSON data connectivity. Data entry MUST be complete.
 
 ### Technology Stack exploited
 
