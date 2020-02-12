@@ -29,20 +29,20 @@ public class Controller {
 		 { return participantx.save(presentX); }
  
 // http://8080/full/accounts/:[id]	
-@GetMapping(path = "accounts/{id}")										//	GET #2
+@GetMapping(path = "accounts/{id}")										// GET #2
 	public Muntu getItem(@PathVariable("id") int id)
 		{ return participantx.findById(id).orElse(null);}
 @GetMapping(path = "accounts")
 	public List<Muntu> getItems()
-		 { return participantx.findAll();	}						//	GET #3
+		 { return participantx.findAll();	}					    	// GET #3
 		
-// http://8080/full/account/:[id]			SECOND OPTION							//	UPDATE #4
+// http://8080/full/account/:[id]			SECOND OPTION			   // UPDATE #4
 @PutMapping(path = "accounts")
 	public Muntu saveOrUpdateItem(@RequestBody Muntu presentY) 
 			  { return participantx.save(presentY);	}	
 
-// http://8080/full/accounts/:[id]           OPTION ONE
-@PutMapping(path = "accounts/{id}")										// UPDATING #5
+// http://8080/full/accounts/:[id]           OPTION ONE		          // UPDATING #5
+@PutMapping(path = "accounts/{id}")									
 	public Muntu updateItemById(@PathVariable int id, 
 	@Valid @RequestBody Muntu promotedX) {
 		Muntu promotedCopy = participantx.findById(id).orElse(null);
@@ -54,8 +54,8 @@ public class Controller {
 		Muntu updatedItem = participantx.save(promotedCopy);		
 		return updatedItem;	}
 
-// http://8080/full/accounts/:[id]
-@PatchMapping(path = "accounts/{id}")									// PATCH (#6P)
+// http://8080/full/accounts/:[id]                                  // PATCH (#6P)
+@PatchMapping(path = "accounts/{id}")									
 	public Muntu patchUpdateItemById(@PathVariable int id, 
 	@Valid @RequestBody Muntu demotedx) {
 		Muntu demotedCopy = participantx.findById(id).orElse(null);
@@ -67,15 +67,15 @@ public class Controller {
 		Muntu updatedItem = participantx.save(demotedCopy);
 		return updatedItem; 
 	}
-// http://8080/full/accounts/:[id]
-@DeleteMapping(path = "accounts/{id}")							         // DELETING #7
+// http://8080/full/accounts/:[id]									 // DELETING #7
+@DeleteMapping(path = "accounts/{id}")							        
 	public String deleteItem(@PathVariable int id)
 	 {	participantx.deleteById(id);		
 		return "participants' record erased successfully";
 	}
 
-// http://8080/full/accounts		EVERYTHING
- @DeleteMapping(path = "accounts")								         // DELETE-#8p
+// http://8080/full/accounts				EVERYTHING  			 // DELETE-#8p
+ @DeleteMapping(path = "accounts")								        
 	public void deleteAllItems(Muntu firedx) 
 		{	participantx.deleteAll();	}
 }
