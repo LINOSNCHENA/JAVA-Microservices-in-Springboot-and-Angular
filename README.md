@@ -29,7 +29,6 @@ Two separate modules make up this application
 ## Interface UX
  Below are screens shots from the application
 
-![ Application Muntu Interface page #1 ](https://github.com/LINOSNCHENA/Fullstack-system-in-SpringAngularMSSQL-APP/blob/master/page1.png)
-
 ![ Application Muntu Interface page #1 ](https://github.com/LINOSNCHENA/Microservice-APIs-in-SpringBoot-and-Angular/blob/master/page1.png)
+
 ![ Application Muntu Interface page #2 ](https://github.com/LINOSNCHENA/Microservice-APIs-in-SpringBoot-and-Angular/blob/master/page2.png)
