@@ -26,6 +26,17 @@ Two separate modules make up this application
         npm start
         npm stop
 
+
+
+
+        ## Execution commands
+
+```
+mvn clean package
+mvn spring-boot:run
+
+```
+
 ## Interface UX
  Below are screens shots from the application
 
