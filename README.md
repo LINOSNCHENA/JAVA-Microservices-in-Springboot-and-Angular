@@ -2,37 +2,38 @@
 
 Apps createa a full-stack simple application by combining two of the current popular frameworks-Angular and Spring-Boot. It hass three different databases alternatives. CRUD operations are implemented and exploited using the databases with a uniform interface as JSON data. Data entry MUST be complete.
 
-### Technology Stack exploited
+### Technology stack used
 
 The development full-stack application composes of;
 
 1. JavaScript +9
 2. Java +15 (Spring boot)
-3. Database(MSSQL,Postgresql,MySQL,H2,MongoDB)
-4. Catalina Run
-5. Hibernate
-6. Tomcat Server
-7. Maven
+3. Catalina Run
+4. Hibernate
+5. Tomcat Server
+6. Maven
+7. Database(MSSQL,Postgresql)
+8. Database(MySQL,H2,MongoDB)
 
-## Execution commands
+## Running the application
 
 ```
-FRONT-END
-npm start
-npm stop
-
-BACK-END
+BACK-END-API
 mvn clean package
 mvn spring-boot:run
+
+FRONT-END-API
+npm start
+npm stop
 
 ```
 
 ## Interface U-Xperiences
  Below are screens shots from the application
 
-![ Application Muntu Interface page #1 ](https://github.com/LINOSNCHENA/Microservice-APIs-in-SpringBoot-and-Angular/blob/master/page1.png)
-![ Application Muntu Interface page #2 ](https://github.com/LINOSNCHENA/Microservice-APIs-in-SpringBoot-and-Angular/blob/master/page2.png)
-![ Application Muntu Interface page #1 ](https://github.com/LINOSNCHENA/Microservice-APIs-in-SpringBoot-and-Angular/blob/master/page1.png)
-![ Application Muntu Interface page #2 ](https://github.com/LINOSNCHENA/Microservice-APIs-in-SpringBoot-and-Angular/blob/master/page2.png)
-![ Application Muntu Interface page #1 ](https://github.com/LINOSNCHENA/Microservice-APIs-in-SpringBoot-and-Angular/blob/master/page1.png)
-![ Application Muntu Interface page #2 ](https://github.com/LINOSNCHENA/Microservice-APIs-in-SpringBoot-and-Angular/blob/master/page2.png)
+![ Muntu #1 ](https://github.com/LINOSNCHENA/JAVA-Microservice-APIs-in-SpringBoot-and-Angular-FS2/blob/master/uxViews/page1.png)
+![ Muntu #2 ](https://github.com/LINOSNCHENA/JAVA-Microservice-APIs-in-SpringBoot-and-Angular-FS2/blob/master/uxViews/page2.png)
+![ Muntu #3 ](https://github.com/LINOSNCHENA/JAVA-Microservice-APIs-in-SpringBoot-and-Angular-FS2/blob/master/uxViews/page1.png)
+![ Muntu #4 ](https://github.com/LINOSNCHENA/JAVA-Microservice-APIs-in-SpringBoot-and-Angular-FS2/blob/master/uxViews/page2.png)
+![ Muntu #5 ](https://github.com/LINOSNCHENA/JAVA-Microservice-APIs-in-SpringBoot-and-Angular-FS2/blob/master/uxViews/page1.png)
+![ Muntu #6 ](https://github.com/LINOSNCHENA/JAVA-Microservice-APIs-in-SpringBoot-and-Angular-FS2/blob/master/uxViews/page1.png)
