@@ -9,7 +9,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "bank1")
+@Table(name = "zanaco")
 public class Muntu {
 
 	@Id
@@ -24,7 +24,7 @@ public class Muntu {
 	@Column(name = "dept")
 	private String dept;
 	@Column(name = "salary", nullable = false, 
-	columnDefinition = "varchar(255) default '190850'")
+	columnDefinition = "varchar(255) default 19085")
 	private int salary;
 	@Column(name = "status", nullable = false, 
 	columnDefinition = "varchar(255) default '202040'")
