@@ -1,0 +1,61 @@
+<p>productview works!</p>
+
+<div style="width: 400px; margin: auto;">
+    <div *ngIf="activeBanker" class="edit-form">
+      <h4> ZANACO - BANKER</h4>
+      <form>
+        <div class="form-group">        <label for="name">Name</label>
+          <input          type="text"          class="form-control"
+            id="name"  [(ngModel)]="activeBanker.name"    name="name"/> </div>
+        <div class="form-group">
+          <label for="dept">Department</label> <input  type="text"     class="form-control" 
+             id="dept" [(ngModel)]="activeBanker.dept"  name="dept"  />
+        </div>
+        <div class="form-group">        <label for="post">Post</label>
+          <input          type="text"          class="form-control"
+            id="post"  [(ngModel)]="activeBanker.post"    name="post"/> </div>
+        <div class="form-group">
+          <label for="description">Salary</label> <input  type="text"     class="form-control" 
+             id="salary" [(ngModel)]="activeBanker.salary"  name="salary"  />
+        </div>
+  
+        <div class="form-group">
+          <label><strong>Status:</strong></label>
+          {{ activeBanker.published ? "Published" : "Pending" }}
+        </div>
+      </form>
+  
+      <button
+        class="badge badge-primary mr-2"
+        *ngIf="activeBanker.published"
+        (click)="updatePublished(false)"
+      >
+        UnPublish
+      </button>
+      <button
+        *ngIf="!activeBanker.published"
+        class="badge badge-primary mr-2"
+        (click)="updatePublished(true)"
+      >
+        Publish
+      </button>
+  
+      <button class="badge badge-danger mr-2" (click)="deleteBanker()">
+        Delete
+      </button>
+  
+      <button
+        type="submit"
+        class="badge badge-success"
+        (click)="updateBanker()"
+      >
+        Update
+      </button>
+      <p>{{ message }}</p>
+    </div>
+  
+    <div *ngIf="!activeBanker">
+      <br />
+      <p>Cannot access this BANKER...</p>
+    </div>
+  </div>

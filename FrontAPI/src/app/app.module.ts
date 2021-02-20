@@ -20,7 +20,10 @@ const appRoutes :Routes = [
     AppComponent,    AllEmployeesComponent,    OneEmployeeComponent
   ],
   imports: [
-    BrowserModule, HttpModule,    AppRoutingModule, RouterModule.forRoot(appRoutes), FormsModule
+    BrowserModule, HttpModule,
+        AppRoutingModule,
+         RouterModule.forRoot(appRoutes), 
+        FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
