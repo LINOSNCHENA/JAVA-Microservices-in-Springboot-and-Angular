@@ -17,10 +17,13 @@ const appRoutes :Routes = [
 
 @NgModule({
   declarations: [
-    AppComponent,    AllEmployeesComponent,    OneEmployeeComponent
+    AppComponent,   
+     AllEmployeesComponent,   
+      OneEmployeeComponent
   ],
   imports: [
-    BrowserModule, HttpModule,
+    BrowserModule, 
+    HttpModule,
         AppRoutingModule,
          RouterModule.forRoot(appRoutes), 
         FormsModule

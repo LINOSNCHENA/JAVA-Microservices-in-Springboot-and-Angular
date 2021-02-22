@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Worker } from '../model/worker';
 import { Router } from '@angular/router';
-import { Service4allService } from '../services/Service4all.service';
+import { AccountService } from '../services/account.service';
 
 @Component({
   selector: 'app-all-employees',
@@ -11,7 +11,7 @@ import { Service4allService } from '../services/Service4all.service';
 
 export class AllEmployeesComponent implements OnInit {
   private workers: Worker[];
-  constructor(private _userService: Service4allService, private _router: Router) { }
+  constructor(private _userService: AccountService, private _router: Router) { }
 
   ngOnInit() {
     this._userService.getItems().subscribe(

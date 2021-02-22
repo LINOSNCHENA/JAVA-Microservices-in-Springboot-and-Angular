@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Worker } from '../model/worker';
 import { Router } from '@angular/router';
-import { Service4allService } from '../services/Service4all.service';
+import { AccountService } from '../services/account.service';
 
 @Component({
   selector: 'app-one-employee',
@@ -9,11 +9,9 @@ import { Service4allService } from '../services/Service4all.service';
   styleUrls: ['./one-employee.component.css']
 })
 export class OneEmployeeComponent implements OnInit {
-  private worker: Worker;
- 
+  private worker: Worker; 
   dateX = new Date();
-  constructor(private _userService: Service4allService, private _rotuer: Router) { }
-
+  constructor(private _userService: AccountService, private _rotuer: Router) { }
   ngOnInit() { this.worker = this._userService.getter(); }
 
   completeForm() {
