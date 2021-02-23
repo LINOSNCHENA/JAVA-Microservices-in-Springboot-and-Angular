@@ -18,7 +18,7 @@ import com.presly.marvin.view.Reposit;
 import com.presly.marvin.model.Muntu;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins ={"http://localhost:4200","http://localhost:4400" ,"http://localhost:4600" ,"http://localhost:4800"})
 @RequestMapping("full")
 
 public class Controller {

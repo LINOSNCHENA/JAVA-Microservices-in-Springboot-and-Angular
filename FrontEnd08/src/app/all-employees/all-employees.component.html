@@ -2,7 +2,7 @@
 <header class="masthead bg-primary text-white text-center">
   <div class="container">
     <br />
-    <h2 class="text-uppercase mb-0">Products Available V2</h2>
+    <h2 class="text-uppercase mb-0">Products Available V1</h2>
 
     <hr class="star-light" />
   </div>
@@ -13,22 +13,24 @@
     <thead>
       <th>No.</th>
       <th>Name</th>
-      <th>Identity</th>
+      <th>Identy</th>
       <th>Position</th>
       <th>Description</th>
       <th>Unit Price</th>
+      <!-- <th>Status</th> -->
       <th>Purchase Date</th>
 
       <th colspan="2">Actions</th>
     </thead>
     <tbody>
-      <tr *ngFor="let worker of workers; let z = index">
-        <td>{{ z + 1 }}</td>
+      <tr *ngFor="let worker of workers; let x = index">
+        <td>{{ x + 1 }}</td>
         <td>{{ worker.name }}</td>
         <td>{{ worker.id }}</td>
         <td>{{ worker.post }}</td>
         <td>{{ worker.dept }}</td>
-        <td>ZMK {{ worker.salary }}</td>
+        <td>CZK {{ worker.salary }}</td>
+        <!-- <td>{{ worker.status }}</td> -->
         <td>{{ worker.createdat | date: "medium" }}</td>
         <td>
           <button class="btn btn-danger" (click)="deleteItem(worker)">

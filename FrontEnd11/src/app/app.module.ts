@@ -7,7 +7,7 @@ import { ProductsComponent } from './products/products.component';
 import { ProductComponent } from './product/product.component';
 import { FormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
-import { ProductService } from './services/product.service';
+// import { ProductService } from './services/product.service';
 import { HttpClientModule } from '@angular/common/http';
 import { AccountService } from './services/account.service';
 import { HttpModule } from '@angular/http';

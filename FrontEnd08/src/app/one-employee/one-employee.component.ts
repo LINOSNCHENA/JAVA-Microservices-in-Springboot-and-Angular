@@ -1,21 +1,23 @@
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { AccountService } from '../services/account.service';
+import { Component, OnInit } from "@angular/core";
+import { Worker } from "../model/worker";
+import { Router } from "@angular/router";
+import { AccountService } from "../services/account.service";
 
 @Component({
-  selector: 'app-product',
-  templateUrl: './product.component.html',
-  styleUrls: ['./product.component.css'],
+  selector: "app-one-employee",
+  templateUrl: "./one-employee.component.html",
+  styleUrls: ["./one-employee.component.css"],
 })
-export class ProductComponent implements OnInit {
+export class OneEmployeeComponent implements OnInit {
 
-  worker: any;
+  private worker: Worker;
   constructor(private _empDetailsService: AccountService,
     private _routerDetails: Router) { }
 
   ngOnInit() {
-   // this.worker = this._empDetailsService.getter();
+    this.worker = this._empDetailsService.getter();
   }
+
   completeForm() {
     console.log(this.worker);
     // 1. Test the presence/absence of a worker
@@ -31,7 +33,7 @@ export class ProductComponent implements OnInit {
       );
     } else {
       // 2. Both update and create worker
-      this._empDetailsService.saveOrUpdateItem(this.worker.id,this.worker).subscribe(
+      this._empDetailsService.saveOrUpdateItem(this.worker).subscribe(
         (worker) => {
           console.log(worker);
           this._routerDetails.navigate(["/"]);
@@ -40,9 +42,9 @@ export class ProductComponent implements OnInit {
           console.log(error);
         }
       );
-     }
+    }
   }
-  // 3. FULLIST Data
+  // 3. Back to fulllist
   formOne() {
     this._empDetailsService.getItems();
     this._routerDetails.navigate(["/"]);

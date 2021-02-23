@@ -11,14 +11,14 @@ import { AccountService } from '../services/account.service';
 export class ProductsComponent implements OnInit {
 
   workers!: Worker[];
+  //worker!: any;
 
-  private workerjs!: Worker[];
   constructor(private _userService: AccountService, private _router: Router) { }
 
-  ngOnInit() {
+   ngOnInit() {
     this._userService.getItems().subscribe(
-      (workers: Worker[]) => { console.log(workers); this.workers = workers; }
-      , (error: any) => { console.log(error); })
+      (workers) => { console.log(workers); this.workers = workers; }
+      , (error) => { console.log(error); })
   }
 
   // Double
@@ -30,13 +30,14 @@ export class ProductsComponent implements OnInit {
   // remove worker
   deleteItem(worker: Worker) {
     this._userService.deleteItem(worker.id).subscribe(
-      (data: any) => { this.workers.splice(this.workers.indexOf(worker), 1); }
-      , (error: any) => { console.log(error); });
+      (data: any) => { return (this.workers.splice(this.workers.indexOf(worker), 1)); }
+      , (error: any) => { 
+        console.log(error); });
   }
 
   // new worker
   createItem() {
-    let worker = new Worker();
+    var worker = new Worker();
    // this._userService.setter(worker);
     this._router.navigate(['/enrolls']);
   }
