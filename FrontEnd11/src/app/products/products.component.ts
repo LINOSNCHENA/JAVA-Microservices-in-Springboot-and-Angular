@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { ProductService } from '../services/product.service';
 import { Worker } from 'src/app/services/worker';
+import { AccountService } from '../services/account.service';
 
 @Component({
   selector: 'app-products',
@@ -10,76 +10,34 @@ import { Worker } from 'src/app/services/worker';
 })
 export class ProductsComponent implements OnInit {
 
+  workers!: Worker[];
 
-  products?: Worker[];
-  activeBanker?: Worker;
-  currentIndex = -1;
-  name = '';
+  private workerjs!: Worker[];
+  constructor(private _userService: AccountService, private _router: Router) { }
 
-  constructor(private bnkService: ProductService,
-    private _router: Router,) { }
-
-  ngOnInit(): void {
-    this.bankersUpdated();
+  ngOnInit() {
+    this._userService.getItems().subscribe(
+      (workers: Worker[]) => { console.log(workers); this.workers = workers; }
+      , (error: any) => { console.log(error); })
   }
 
-  bankersUpdated(): void {
-    this.bnkService.getAll()
-      .subscribe(
-        data => {
-          this.products = data; 
-        },
-        error => {
-          console.log(error);
-        });
+  // Double
+  saveOrUpdateItem(worker: any) {
+    this._userService.setter(worker);
+    this._router.navigate(['/enrolls']);
   }
 
-  refreshList(): void {
-    this.bankersUpdated();
-    this.activeBanker = undefined;
-    this.currentIndex = -1;
+  // remove worker
+  deleteItem(worker: Worker) {
+    this._userService.deleteItem(worker.id).subscribe(
+      (data: any) => { this.workers.splice(this.workers.indexOf(worker), 1); }
+      , (error: any) => { console.log(error); });
   }
 
-  setBankerActive(banker: any, index: number): void {
-    this.activeBanker = banker;
-    this.currentIndex = index;
-  }
-
-  deleteAllBankers(): void {
-    this.bnkService.deleteAll()
-      .subscribe(
-        response => {
-          console.log(response);
-          this.refreshList();},
-        error => {
-          console.log(error);
-        });
-  }
-
-  searchName(): void {
-    this.bnkService.searchByName(this.name)
-      .subscribe(
-        data => {
-          this.products = data;
-          console.log(data);
-        },
-        error => {
-          console.log(error);
-        });
-  }
-
-  // edit worker
-  editBanker(worker: Worker) {
-    var id = worker.id;
-    console.log("\n======================================\n");
-    console.log(id);
-    console.log(worker);
-    this._router.navigate(['/banks/'+ id ]);
-  }
-
-   // add worker
-   addBanker() {
-    console.log("\n======================================\n");
-    this._router.navigate(['/addbanker/']);
+  // new worker
+  createItem() {
+    let worker = new Worker();
+   // this._userService.setter(worker);
+    this._router.navigate(['/enrolls']);
   }
 }

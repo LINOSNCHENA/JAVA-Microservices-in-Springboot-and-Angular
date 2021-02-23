@@ -9,22 +9,25 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 import { ProductService } from './services/product.service';
 import { HttpClientModule } from '@angular/common/http';
-import { ProductviewComponent } from './productview/productview.component';
+import { AccountService } from './services/account.service';
+import { HttpModule } from '@angular/http';
+//import { ProductviewComponent } from './productview/productview.component';
 
 const appRoutes: Routes = [
   { path: 'products', component: ProductsComponent },
   { path: '', component: ProductComponent },
 ];
 @NgModule({
-  declarations: [AppComponent, ProductsComponent, ProductComponent, ProductviewComponent],
+  declarations: [AppComponent, ProductsComponent, ProductComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
     RouterModule.forRoot(appRoutes),
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    HttpModule,
   ],
-  providers: [ProductService],
+  providers: [AccountService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

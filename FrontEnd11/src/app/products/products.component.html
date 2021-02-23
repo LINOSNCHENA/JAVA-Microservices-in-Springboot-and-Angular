@@ -1,38 +1,45 @@
 <br>
 <header class="masthead bg-primary text-white text-center">
-  <div class="container"><br>
-    <h2 class="text-uppercase mb-0"> DETAILS OF BANKERS 2011X</h2>
-    <hr class="star-light">
-  </div>
-</header>
-<button class="btn btn-primary" (click)="addBanker()">Add new entry to the Room</button>
-<div class="container">
-  <table class="table table-striped">
-    <thead>
-      <th>No.</th>
-      <th>Name</th>
-      <th>Post</th>
-      <th>Dept</th>
-      <th>Salary</th>
-      <th>Status </th>
-      <th colspan="2">Actions</th>
-    </thead>
-    <tbody>
-      <tr *ngFor="let worker of products">
-        <td>{{worker.id}}</td>
-        <td>{{worker.name}}</td>
-        <td>{{worker.post}}</td>
-        <td>{{worker.dept}}</td>
-        <td>{{worker.salary}}</td>
-        <td>{{worker.published}}</td>
-        <td>
-          <button class="btn btn-danger" (click)="editBanker(worker)">Delete</button>
-          <button class="btn btn-warning" (click)="editBanker(worker)">Edit</button>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-  <button class="btn btn-primary" (click)="addBanker()">Add new entry to the Room</button>
+    <div class="container"><br>
+        <h2 class="text-uppercase mb-0">Products Available </h2>
 
+        <hr class="star-light">
+    </div>
+</header>
+
+<div class="container">
+    <table class="table table-striped">
+        <thead>
+            <th>No.</th>
+            <th>Name</th>
+            <th>Position</th>
+            <th>Description</th>
+            <th>Unit Price</th>
+            <th>Status </th>
+            <th>Purchase Date</th>
+
+            <th colspan="2">Actions</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let worker of workers">
+                <td>{{worker.id}}</td>
+                <td>{{worker.name}}</td>
+                <td>{{worker.post}}</td>
+                <td>{{worker.dept}}</td>
+                <td>{{worker.salary}}</td>
+                <td>{{worker.status}}</td>
+                <td>{{worker.createdat| date :'medium'}}</td>
+
+                <td><button class="btn btn-danger" (click)="deleteItem(worker)">Delete</button>
+                    <button class="btn btn-primary" (click)="saveOrUpdateItem(worker)">Update</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <button class="btn btn-primary" (click)="createItem()">Add new Product</button>
 </div>
-<br><br>
+
+<hr>
+<footer class="container-fluid bg-4 text-center">
+    <p> 2020 Copyright Ⓒ Linos Nchena : All Rights Reserved</p>
+</footer>
