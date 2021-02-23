@@ -5,10 +5,13 @@ import { ProductsComponent } from './products/products.component';
 
 
 const routes: Routes = [
-  { path: '', redirectTo: 'products', pathMatch: 'full' },
+
   { path: 'addbanker', component: ProductComponent },
  // { path: 'banks/:id', component: DetailbankerComponent },
-  { path: 'products', component: ProductsComponent }
+  { path: 'products', component: ProductsComponent },
+  {path : 'enrolls',component: ProductComponent }, //one
+ // {path : '',component:AllEmployeesComponent},//two
+  { path: '', redirectTo: 'products', pathMatch: 'full' },
 ];
 
 @NgModule({

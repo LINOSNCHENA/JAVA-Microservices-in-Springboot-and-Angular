@@ -1,7 +1,14 @@
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { ProductService } from '../services/product.service';
+// import { Component, OnInit } from '@angular/core';
+// import { Router } from '@angular/router';
+// import { ProductService } from '../services/product.service';
 import { Worker } from 'src/app/services/worker';
+// import { AccountService } from '../services/account.service';
+
+
+import { Component, OnInit } from '@angular/core';
+
+import { Router } from '@angular/router';
+import { AccountService } from '../services/account.service';
 
 @Component({
   selector: 'app-product',
@@ -10,52 +17,29 @@ import { Worker } from 'src/app/services/worker';
 })
 export class ProductComponent implements OnInit {
 
-
-  banker = {
-    name: '',
-    dept: '',
-    post: '',
-    salary: '',
-    published:false
-  };
-
-  banker2!: Worker;
-  submitted = false;
-
-  constructor(private bnkService: ProductService) { }
-
-  ngOnInit(): void { }
-
-  saveBanker(): void {
-    const data = {
-      name: this.banker.name,
-      dept: this.banker.dept,
-      post: this.banker.post,
-      salary: this.banker.salary,
-      published: this.banker.published,
-    };
-
-    this.bnkService.create(data)
-      .subscribe(
-        response => {
-          console.log(response);
-          this.submitted = true;
-        },
-        error => {
-          console.log(error);
-        });
+  worker!: Worker; 
+  dateX = new Date();
+  constructor(private _userService: AccountService, private _rotuer: Router) { }
+  ngOnInit() {// this.worker = this._userService.getter(); 
   }
 
-  newBanker(): void {
-    this.submitted = false;
-    this.banker = {
-      name: '',
-      dept: '',
-      post: '',
-      salary: '',
-      published: this.submitted
-    };
-    console.log(this.banker)
+  completeForm() {
+  //   console.log(this.worker);
+  //   // Test the presence/absence of a worker
+  //   if (this.worker.id == undefined) {
+  // //    this._userService.addItem(this.worker).subscribe((worker) => {
+  //       this._userService.addItem(this.worker).subscribe((res: Worker[]) => {
+  //       console.log(worker);
+  //       this._rotuer.navigate(['/']);
+  //     }, (error) => { console.log(error); });
+  //   }
+  //   else {
+  //     // Both update and create worker
+  //     this._userService.saveOrUpdateItem(this.worker).subscribe((worker) => {
+  //       console.log(worker);
+  //       this._rotuer.navigate(['/']);
+  //     }, (error) => { console.log(error); });
+  //   }
   }
 
 }

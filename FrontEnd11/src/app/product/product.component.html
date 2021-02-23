@@ -1,24 +1,71 @@
-<div style="width: 400px; margin: auto;">
-    <div class="submit-form">
-      <div *ngIf="!submitted">
-  
-        <div class="form-group">
-          <label for="title">Name</label> <input type="text" class="form-control" id="name" required
-            [(ngModel)]="banker.name" name="name" /> </div>
-        <div class="form-group">
-          <label for="description">Post</label>
-          <input class="form-control" id="post" required [(ngModel)]="banker.post" name="post" /> </div>
-        <div> <label for="description">Department</label>
-          <input class="form-control" id="dept" required [(ngModel)]="banker.dept" name="dept" /> </div>
-        <div class="form-group"> <label for="title">salary</label>
-          <input type="text" class="form-control" id="salary" required [(ngModel)]="banker.salary" name="salary" />
-        </div>
-        <button (click)="saveBanker()" class="btn btn-success">Submit Data</button>
-      </div>
-  
-      <div *ngIf="submitted">
-        <h4>You submitted successfully!</h4>
-        <button class="btn btn-success" (click)="newBanker()">Add Banker Data</button>
-      </div>
-    </div>
+<br>
+<header class="masthead bg-primary text-white text-center">
+  <div class="container"><br>
+    <h2 class="text-uppercase mb-0">Data entry for Individual Product </h2>
+    <hr class="star-light">
   </div>
+</header>
+
+<div class="container">
+
+  <form (ngSubmit)="completeForm()">
+    <div class="form group">
+      <label for="id"> Edit or update records in database</label>
+    </div>
+
+    <div class="form group">
+      <label for="name"> Fullnames</label>
+      <input type="text" name="fname" class="form-control" [(ngModel)]="worker.name">
+    </div>
+
+    <div class="form group">
+      <label for="post">Position</label>
+      <select name="post" class="form-control" [(ngModel)]="worker.post">
+        <option value="Administrator">Administrator</option>
+        <option value="Lecturer">Lecturer</option>
+        <option value="Contractor">Contractor</option>
+        <option value="Labourer">Labourer</option>
+        <option value="others">Others- Please Specify Below</option>
+      </select>
+    </div>
+
+    <div class="form group">
+      <label for="dept">Job Department</label>
+      <select name="dept" class="form-control" [(ngModel)]="worker.dept">
+        <option value="computing">Computing</option>
+        <option value="Accounting">Accounting</option>
+        <option value="Humanresource">Human Resource</option>
+        <option value="Finance">Finance</option>
+        <option value="others">Others- Please Specify Below</option>
+      </select>
+    </div>
+
+    <div class="form group">
+      <label for="status">Job status</label>
+      <select name="status" class="form-control" [(ngModel)]="worker.status">
+        <option value="Permanent">permanent</option>
+        <option value="Part-time">part-time</option>
+        <option value="Contractor">contractor</option>
+        <option value="Visitor">visitor</option>
+        <option value="others">Others- Please Specify Below</option>
+      </select>
+    </div>
+
+    <div class="form group">
+      <label for="salary">Salary</label>
+      <input type="text" name="nname" class="form-control" [(ngModel)]="worker.salary">
+    </div>
+<!-- 
+    <div class="form group">
+      <label for="createdt">CREATED AT</label>
+      <select name="createdt"  class="form-control" [(ngModel)]="worker.createdat" >
+        <h1>{{dateX}}</h1> 
+      <option dateX>Yesterday</option>  
+      <option value=Date.now()>Today</option>
+      <option value="2019-10-12">Tommorow</option>       
+      <option value="2000-01-20">Unknown</option></select>
+    </div> -->
+
+    <input type="submit" value="save" class="btn btn-success">
+  </form>
+</div>
