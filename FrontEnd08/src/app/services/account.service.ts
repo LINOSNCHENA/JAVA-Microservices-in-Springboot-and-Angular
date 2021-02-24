@@ -13,6 +13,7 @@ import { Worker } from '../model/worker'
 export class AccountService {
 
     private url1: string = "http://localhost:8080/full";
+    private url: string = 'http://localhost:8080/full/accounts';
     private headers = new Headers({ "Content-Type": "application/json" });
     private options = new RequestOptions({ headers: this.headers });      // Data type Server
     private worker: Worker;
@@ -33,12 +34,17 @@ export class AccountService {
             .map(response => { response.json(), console.log(response) })
             .catch(this.errorPost);
     }
-    saveOrUpdateItem(worker: Worker) {
+    saveOrUpdateItem22(worker: Worker) {
         return this._http.put(this.url1 + "/accounts", JSON.stringify(worker), this.options)
             // .map((response: Response) => response.json())
             .map(response => { response.json(), console.log(response) })
             .catch(this.errorPost);
     }
+    saveOrUpdateItem(id: number, productx: Worker): Observable<any> {
+        console.log(productx);
+        const url = `${this.url}/${id}`;
+        return this._http.put(url, productx, this.options);
+      }
 
     // http://localhost/8080/full/accounts/:id                          //  GET/DELETE/ERROR(3)
     getItem(id: number) {
@@ -47,8 +53,17 @@ export class AccountService {
             .map(response => { response.json(), console.log(response) })
             .catch(this.errorPost);
     }
+
+    deleteItem2(id: number) {
+        // 4
+        return this._http
+          .delete(this.url1 + '/accounts/' + id, this.options)
+          .map((res) => res.json())
+          .catch(this.errorPost);
+      }
+
     deleteItem(id: number) {
-        return this._http.delete(this.url1 + "/accounts" + id, this.options)
+        return this._http.delete(this.url1 + "/accounts/" + id, this.options)
             // .map((response:Response)=>response.json())
             .map(response => { response.json(), console.log(response) })
             .catch(this.errorPost);

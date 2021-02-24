@@ -23,6 +23,7 @@ import com.presly.marvin.model.Muntu;
 
 public class Controller {
 @Autowired  	Reposit customa;
+// http://localhost:4200/full/accounts
 // http://8080/full/accounts
 @PostMapping(path = "accounts")											// POST #1
 	public Muntu addItem(@RequestBody Muntu firstClient)

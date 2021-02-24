@@ -33,7 +33,8 @@ export class OneEmployeeComponent implements OnInit {
       );
     } else {
       // 2. Both update and create worker
-      this._empDetailsService.saveOrUpdateItem(this.worker).subscribe(
+     // this._admsource.saveOrUpdateItem(this.worker.id, this.worker).subscribe((worker) => {
+      this._empDetailsService.saveOrUpdateItem(this.worker.id, this.worker).subscribe(
         (worker) => {
           console.log(worker);
           this._routerDetails.navigate(["/"]);
