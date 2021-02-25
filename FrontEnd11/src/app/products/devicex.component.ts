@@ -1,14 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { AccountService } from '../services/account.service';
-import { Worker } from 'src/app/services/worker';
+import { Worker } from '../model/worker'
+import { FormGroup, FormControl } from '@angular/forms';
+import { AdminsService } from '../services/admins.service';
+import { ProductService } from '../services/product.service';
 
 @Component({
-  selector: 'app-product',
-  templateUrl: './product.component.html',
-  styleUrls: ['./product.component.css'],
+  selector: 'app-devicex',
+  templateUrl: './devicex.component.html',
+  styleUrls: ['./devicex.component.css']
 })
-export class ProductComponent implements OnInit {
+export class DevicexComponent implements OnInit {
   worker!: Worker;
   completeForm() {
     console.log(this.worker);
@@ -32,14 +34,33 @@ export class ProductComponent implements OnInit {
       }, (error) => { console.log(error); });
     }
   }
+  title!: string;
+  rows: Worker[] = [];
 
+  p: number = 1;
+  limit: number = 2;
+  total!: number;
+  finalresults!: any;// Object;
 
+  msgs: any;
+  deletemsg: any;
+  btnsubmit = true;
+  btnupdate = false;
 
+  profileForm = new FormGroup({
+    id: new FormControl(''),
+    name: new FormControl(''),
+    town: new FormControl(''),
+    hotel: new FormControl(''),
+    isactive: new FormControl(''),
+    createdat: new FormControl('')
+  });
+  // private workers: Worker[];
   // private workers: Worker[];
   public workers!: Worker[];
-  constructor(private _userService: AccountService,
-    private _router: Router, private service: AccountService,
-    private _AdMinService: AccountService, 
+  constructor(private _userService: AdminsService,
+    private _router: Router, private service: ProductService,
+    private _AdMinService: AdminsService, 
     private _AdmRouter: Router) { }
 
   ngOnInit() {
@@ -52,6 +73,12 @@ export class ProductComponent implements OnInit {
     this.worker = this._AdMinService.getter();
   }
 
+  onsubmit() {
+    this.service.insertData(this.profileForm.value).subscribe(data => {
+      this.msgs = data;
+      this.ngOnInit();
+    });
+  }
 
   // Double
   saveOrUpdateItem(worker: Worker) {
@@ -77,5 +104,29 @@ export class ProductComponent implements OnInit {
     this._router.navigate(['/']);
   }
 
-  
+  /////////////////////////////////// SECOND PART  ////////////////////////////////////////////
+
+  deletefnc(id: string) {
+    this.service.deleteData(id).subscribe(() => {
+      this.deletemsg = "1 Record Deleted";
+      this.ngOnInit();
+    });
+  }
+
+  editData(id: string) {
+    this.service.editValue(id).subscribe(data => {
+      this.profileForm.patchValue(data); // []
+      this.ngOnInit();
+      this.btnsubmit = false;
+      this.btnupdate = true;
+    });
+  }
+
+  onUpdate(id: string) {
+    this.service.updateData(id, this.profileForm.value).subscribe(data => {
+      this.msgs = data;
+      this.ngOnInit();
+      this.profileForm.reset();
+    });
+  }
 }

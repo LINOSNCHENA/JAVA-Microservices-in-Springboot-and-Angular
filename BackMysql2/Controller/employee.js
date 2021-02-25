@@ -1,5 +1,5 @@
  var express= require('express');
-var db = require('../DataBase/database');
+var connektor = require('../DataBase/database');
 var Employee = require('../Service/routes');
 const router = express.Router();
 
@@ -10,28 +10,31 @@ router.post("/employees/", (req, res, next) => {
         req.body.post,req.body.salary,req.body.published);     
         console.log(this.data);
         console.log("data-11");
-    db.query(Employee.addEmployee(), (err, data)=> {
-        res.status(200).json({ 
-             message:"Worker POST11 added.", 
-             data:data });    
+    connektor.query(Employee.addEmployee(), (err, data)=> {
+        res.status(200).json({  message:"Worker POST11 added.", data:data });  
+     //   res.json(res)  
       console.log(data);
     });
 });  
 
 //  #2A   http://localhost:1010/employee
 router.get("/employees", (req, res, next) => {
-    db.query(Employee.getEmployees(), (err, data)=> {
-    if(!err) {   res.status(200).json({
-         message:"Employees 2011 listed.",
-         data});
-         console.log(data);}
+    console.log('===========================GET2A-ONE=========================================')
+    connektor.query(Employee.getEmployees(), (err, data)=> {
+    if(!err)   res.send(err);
+        res.status(200).json({ message:"Employees 2011 listed.", data});
+      //   console.log(data);
+        // console.log("eGADAFI : ", res.send(data));
+     //    res.send(data)
+       //  result(null, res);
+        
     });    
 });
 
 //  #2B  http://localhost:1010/employees/:id
 router.get("/employees/:employeeId", (req, res, next) => {
     let EmployeeX2 = req.params.employeeId;
-    db.query(Employee.getEmployee(EmployeeX2), (err, data)=> {
+    connektor.query(Employee.getEmployee(EmployeeX2), (err, data)=> {
         if(!err) {
             if(data && data.length > 0) {
             res.status(200).json({
@@ -47,7 +50,7 @@ router.get("/employees/:employeeId", (req, res, next) => {
 //  #3  http://localhost:1010/employees/delete
 router.delete("/employees/:employeeId", (req, res, next) => {
     let pid = req.params.employeeId;
-    db.query(Employee.deleteEmployee(pid), (err, data)=> {
+    connektor.query(Employee.deleteEmployee(pid), (err, data)=> {
         if(!err) {
             if(data && data.affectedRows > 0) {
                 res.status(200).json({

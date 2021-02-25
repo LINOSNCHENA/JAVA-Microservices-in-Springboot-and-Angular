@@ -1,18 +1,16 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-import { ProductComponent } from './product/product.component';
-import { ProductsComponent } from './products/products.component';
+import { Routes, RouterModule } from '@angular/router';
+import { AdminxComponent } from './customers/adminx.component';
+import { DevicexComponent } from './products/devicex.component';
 
+const routesx: Routes = [];
 const routes: Routes = [
-  { path: 'addbanker', component: ProductComponent }, //One
-  { path: 'products', component: ProductsComponent }, // Two
-  { path: 'enrolls', component: ProductComponent }, //one
-
-  { path: '', redirectTo: 'products', pathMatch: 'full' },
+  { path: 'admin', component: AdminxComponent },
+  { path: 'device', component: DevicexComponent },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule],
+  exports: [RouterModule]
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }

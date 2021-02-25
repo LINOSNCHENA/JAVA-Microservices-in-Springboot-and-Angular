@@ -3,8 +3,21 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
-};
+  production: false,
+  //apiUrl: 'http://localhost:8080',
+  url1: "http://localhost:8081",
+  url2: "http://localhost:4220",
+  url3: "http://localhost:4230",
+
+  application:
+  {
+    name: 'SECOND-BANKERS',
+    angular: 'Angular 10.0.14',
+    bootstrap: 'Bootstrap 4.5.2',
+    fontawesome: 'Font Awesome 5.14.0',
+  }
+
+}
 
 /*
  * For easier debugging in development mode, you can import the following file

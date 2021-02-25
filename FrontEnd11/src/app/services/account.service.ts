@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import 'rxjs/add/operator/catch';
+// import 'rxjs/add/operator/catch';
 import { HttpClient } from '@angular/common/http';
-const API_URL = 'http://localhost:8080/full/accounts/';
+const API_URL = 'http://localhost:8080/full/accounts';
 
 @Injectable({
   providedIn: 'root',

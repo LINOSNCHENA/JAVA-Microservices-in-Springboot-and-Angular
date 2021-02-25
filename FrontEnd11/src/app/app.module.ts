@@ -1,33 +1,41 @@
-import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ProductsComponent } from './products/products.component';
-import { ProductComponent } from './product/product.component';
-import { FormsModule } from '@angular/forms';
+import { AdminxComponent } from './customers/adminx.component';
+import { DevicexComponent } from './products/devicex.component';
 import { RouterModule, Routes } from '@angular/router';
-// import { ProductService } from './services/product.service';
+import { HttpErrorHandler } from './services/errorManager';
+import { MessageService } from './services/message';
 import { HttpClientModule } from '@angular/common/http';
-import { AccountService } from './services/account.service';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+// import { HttpModule } from '@angular/http';
+import { AdminsService } from './services/admins.service';
+import { ProductService } from './services/product.service';
 import { HttpModule } from '@angular/http';
-//import { ProductviewComponent } from './productview/productview.component';
 
 const appRoutes: Routes = [
-  { path: 'products', component: ProductsComponent },
-  { path: '', component: ProductComponent },
+  { path: 'devicex', component: DevicexComponent },
+  { path: '', component: AdminxComponent },
 ];
+
 @NgModule({
-  declarations: [AppComponent, ProductsComponent, ProductComponent],
+  declarations: [AppComponent, AdminxComponent, DevicexComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    BrowserModule,
+    HttpModule,
+    AppRoutingModule,
     RouterModule.forRoot(appRoutes),
     FormsModule,
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
     HttpClientModule,
-    HttpModule,
   ],
-  providers: [AccountService],
+  providers: [ProductService, MessageService, AdminsService, HttpErrorHandler],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

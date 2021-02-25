@@ -22,5 +22,5 @@ app.use((err, req, res, next) => {
 });
 
 server.listen(port);
-console.log("Backend #5 an MySQL-API is serving on port : " + port);
+console.log("Backend #5 an MySQL2-API is serving on port : " + port);
 module.exports = app;
