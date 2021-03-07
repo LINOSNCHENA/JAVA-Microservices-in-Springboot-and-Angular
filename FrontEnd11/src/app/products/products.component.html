@@ -1,10 +1,25 @@
-<br />
-<header class="masthead bg-primary text-white text-center">
-  <div class="container">
-    <br />
-    <h2 class="text-uppercase mb-0">Products Available V2</h2>
+<nav class="navbar navbar-expand-sm bg-info navbar-dark">
+  <a class="navbar-brand" href=#> ProductAndThree</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div id="collapsibleNavbar" class="collapse navbar-collapse justify-content-center">
+    <ul class="navbar-nav">
+      <!-- <li class="nav-item">
+        <a class="nav-link active" routerLink="/admin">Admin2</a>
+      </li> -->
+      <li class="nav-item">
+        <a class="nav-link" href=#>Contact Us</a>
+      </li>
+    </ul>
+  </div>
+</nav>
 
-    <hr class="star-light" />
+<br>
+<header class="masthead bg-primary text-white text-center">
+  <div class="container"><br>
+    <h2 class="text-uppercase mb-0"> Customer Details </h2>
+    <hr class="star-light">
   </div>
 </header>
 
@@ -14,39 +29,37 @@
       <th>No.</th>
       <th>Name</th>
       <th>Identity</th>
+      <th>Nation</th>
       <th>Position</th>
-      <th>Description</th>
-      <th>Unit Price</th>
-      <th>Purchase Date</th>
-
+      <th>Paid</th>
+      <th>Status </th>
+      <th>Exit Date</th>
       <th colspan="2">Actions</th>
     </thead>
     <tbody>
-      <tr *ngFor="let worker of workers; let z = index">
-        <td>{{ z + 1 }}</td>
-        <td>{{ worker.name }}</td>
-        <td>{{ worker.id }}</td>
-        <td>{{ worker.post }}</td>
-        <td>{{ worker.dept }}</td>
-        <td>ZMK {{ worker.salary }}</td>
-        <td>{{ worker.createdat | date: "medium" }}</td>
+      <tr *ngFor="let worker of workers; let z=index">
+        <td>{{ 1+z }}</td>
+        <td>{{worker?.id}}</td>
+        <td>{{worker?.name}}</td>
+        <td>{{worker?.post}}</td>
+        <td>{{worker?.dept}}</td>
+        <td> CZK {{worker?.salary}}</td>
+        <td>{{worker?.status}}</td>
+        <td>{{worker?.createdat| date :'medium'}}</td>
         <td>
-          <button class="btn btn-danger" (click)="deleteItem(worker)">
-            Delete
-          </button>
-          <button class="btn btn-primary" (click)="saveOrUpdateItem(worker)">
-            Update
-          </button>
+          <button class="btn btn-danger" (click)="deleteItem(worker)">Delete</button>
+          <button class="btn btn-primary" (click)="saveOrUpdateItem(worker)">Edit</button>
         </td>
       </tr>
     </tbody>
   </table>
-  <button class="btn btn-primary" (click)="createItem()">
-    Add new Product
-  </button>
-</div>
+  <button class="btn btn-primary" (click)="newItem()">Add new entry to the Room</button>
 
-<hr />
-<footer class="container-fluid bg-4 text-center">
-  <p>2020 Copyright Ⓒ Linos Nchena : All Rights Reserved</p>
-</footer>
+</div>
+<br><br>
+
+  <hr>
+  <footer class="container-fluid bg-4 text-center">
+    <p> 2020 Customa Copyright Ⓒ Linos Nchena : All Rights Reserved</p>
+
+  </footer> 

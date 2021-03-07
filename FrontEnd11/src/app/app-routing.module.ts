@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { AdminxComponent } from './customers/adminx.component';
-import { DevicexComponent } from './products/devicex.component';
+import { ProductComponent } from './product/product.component';
+import { ProductsComponent } from './products/products.component';
 
 const routesx: Routes = [];
 const routes: Routes = [
-  { path: 'admin', component: AdminxComponent },
-  { path: 'device', component: DevicexComponent },
+  { path: 'product', component: ProductComponent },
+  { path: 'products', component: ProductsComponent },
 ];
 
 @NgModule({

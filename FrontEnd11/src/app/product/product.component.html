@@ -1,7 +1,26 @@
+<nav class="navbar navbar-expand-sm bg-info navbar-dark">
+  <a class="navbar-brand" href=#> Product4AndService</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div id="collapsibleNavbar" class="collapse navbar-collapse justify-content-center">
+    <ul class="navbar-nav">
+      <!-- <li class="nav-item">
+        <a class="nav-link active" routerLink="/admin">Admin2</a>
+      </li> -->
+      <li class="nav-item">
+        <a class="nav-link" href=#>Contact Us</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+
+
 <br>
 <header class="masthead bg-primary text-white text-center">
   <div class="container"><br>
-    <h2 class="text-uppercase mb-0">Data entry for Individual Product V2 </h2>
+    <h2 class="text-uppercase mb-0">DATA ENTRY TO THE CustoMER v2 </h2>
     <hr class="star-light">
   </div>
 </header>
@@ -19,7 +38,7 @@
     </div>
 
     <div class="form group">
-      <label for="post">Position</label>
+      <label for="post">State</label>
       <select name="post" class="form-control" [(ngModel)]="worker.post">
         <option value="Administrator">Administrator</option>
         <option value="Lecturer">Lecturer</option>
@@ -30,7 +49,7 @@
     </div>
 
     <div class="form group">
-      <label for="dept">Job Department</label>
+      <label for="dept">Position</label>
       <select name="dept" class="form-control" [(ngModel)]="worker.dept">
         <option value="computing">Computing</option>
         <option value="Accounting">Accounting</option>
@@ -41,7 +60,7 @@
     </div>
 
     <div class="form group">
-      <label for="status">Job status</label>
+      <label for="status">Status</label>
       <select name="status" class="form-control" [(ngModel)]="worker.status">
         <option value="Permanent">permanent</option>
         <option value="Part-time">part-time</option>
@@ -52,17 +71,18 @@
     </div>
 
     <div class="form group">
-      <label for="salary">Salary</label>
+      <label for="salary">Payment</label>
       <input type="text" name="nname" class="form-control" [(ngModel)]="worker.salary">
     </div>
 
-    <input type="submit" value="save Detail2" class="btn btn-success">
+    <input type="submit" value="save" class="btn btn-success">
   </form>
-
-  <br>
-  <div>
-    <br>
-    <button class="btn btn-primary" (click)="formOne()"> Exit new Product v2</button>
-  </div>
+  <br><br>
+  <button class="btn btn-primary" (click)="showlist()">Back to Products </button>
 
 </div>
+<hr>
+<footer class="container-fluid bg-4 text-center">
+  <p> 2020 Customas Copyright Ⓒ Linos Nchena : All Rights Reserved</p>
+
+</footer> 
