@@ -1,6 +1,6 @@
 # SIMPLE MICROSERVICE: BACKEND & FRONTEND
 
-A simple crud full-stack simple application using Angular and Spring-Boot. Modules, httpp and httpClients are used for CRUD operations implemented in Angular(08 & 11). A a uniform interface as JSON data is provided for http exchanges. 
+A crud full-stack application using Angular and Spring-Boot. Modules, httpp and httpClients are used for CRUD operations implemented in Angular(08 & 11). A uniform interface as JSON data is provided for http data exchanges. 
 
 ## Technology stack used
 
@@ -24,6 +24,7 @@ mvn spring-boot:run
 cd Frontend \
 -------------------------------
 npm start
+npm install -g npm
 
 ```
 
