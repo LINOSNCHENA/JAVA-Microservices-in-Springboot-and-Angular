@@ -7,11 +7,11 @@ A crud full-stack application using Angular and Spring-Boot. Modules, httpp and 
 The development stack of this application composes of the following;
 
 1. Angular (+8 And +11)
-2. Java +15 (Spring Boot)
+2. Java +11 (Spring Boot)
 3. Hibernate And SpringData
 4. Tomcat Server and Catalina Run
 5. Database(MSSQL,Postgresql)
-6. Database(MySQL,H2,MongoDb)
+6. Database(MySQL,H2,MongoDb,Postgresql)
 
 
 ## Running the application

@@ -1,26 +1,22 @@
-var express = require("express");
-var bodyparser = require("body-parser");
-var rusanguLtD = require("./Controller/employee");
-var http = require("http");
+const express = require("express"),
+  app = express(),
+  bodyParser = require("body-parser");
 
-//Use system configuration for port or use 1010 by default.
-const port = process.env.port || 8082;
-const app = express();
-const server = http.createServer(app);
+app.use(
+  bodyParser.urlencoded({
+    extended: true,
+  })
+);
+app.use(bodyParser.json());
+
 const cors = require("cors");
 const allowlist = ["http://localhost:4200", "http://localhost:54938"];
 app.use(cors(allowlist));
 
-app.use(bodyparser.json());
-app.use(bodyparser.urlencoded({ extended: false }));
-app.use("/", rusanguLtD);
 
-//all other requests are not implemented.
-app.use((err, req, res, next) => {
-  res.status(err.status || 501);
-  res.json({ error: { code: err.status || 501, message: err.message } });
-});
+var routes = require("./app/routes/Routes");
+routes(app);
 
-server.listen(port);
-console.log("Backend #5 an MySQL2-API is serving on port : " + port);
-module.exports = app;
+port = process.env.PORT || 8080;
+app.listen(port);
+console.log("BackEnd #1, MySqlServer1 is listening at port :" + port);
